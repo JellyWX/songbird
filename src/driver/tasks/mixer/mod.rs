@@ -231,6 +231,7 @@ impl Mixer {
             MixerMessage::AddTrack(t) => self.add_track(t),
             MixerMessage::SetTrack(t) => {
                 self.tracks.clear();
+                self.track_handles.clear();
 
                 let mut out = self.fire_event(EventMessage::RemoveAllTracks);
 
